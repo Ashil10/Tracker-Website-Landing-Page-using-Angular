@@ -1,0 +1,86 @@
+::ng-deep .custom-card .p-card {
+  border: none !important;
+
+  box-shadow: 0 0 5px 2px rgb(223, 228, 223) !important;
+
+  background-color: white !important;
+}
+
+.status-item {
+  background-color: #f8f9fa;
+
+  border-radius: 6px;
+
+  transition: background-color 0.3s;
+
+  font-size: 0.875rem;
+}
+.text-green-600 {
+  color: #2e7d32 !important;
+}     
+.status-item.highlight-status {
+  background-color: #fff8e1;
+
+  border-left: 4px solid #f9c74f;
+}
+
+.status-item .pi {
+  font-size: 1rem;
+}
+
+.text-xs {
+  font-size: 0.75rem;
+}
+
+.text-sm {
+  font-size: 0.85rem;
+}
+
+.font-medium {
+  font-weight: 500;
+}
+
+.font-semibold {
+  font-weight: 600;
+}
+
+.management-card .p-2:not(.text-gray-500) {
+  color: #2e7d32 !important;
+}
+
+.text-gray-500 {
+  color: #9e9e9e !important;
+}
+
+.p-button-outlined.p-button-success {
+  border: 1px solid #2e7d32;
+
+  color: #2e7d32;
+
+  background: transparent;
+}
+
+.p-button-outlined.p-button-success:hover {
+  background: #e6f4ea;
+}
+
+.p-button-outlined.p-button-secondary {
+  border: 1px solid #ccc;
+
+  color: #999;
+
+  background: #f4f4f4;
+}
+
+.p-panel {
+  margin-bottom: 1.5rem;
+}
+
+input,
+.p-inputtext {
+  width: 100%;
+
+  padding: 0.5rem;
+
+  font-size: 0.95rem;
+}

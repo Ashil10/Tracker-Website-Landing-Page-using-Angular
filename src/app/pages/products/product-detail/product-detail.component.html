@@ -1,0 +1,245 @@
+<div class="grid">
+  <!-- Left Section -->
+  <div class="col-12 md:col-8">
+    <!-- Product Title -->
+    <h2 class="mb-1">{{ product.name }}</h2>
+    <!-- Tracking Number with Copy Icon -->
+    <p class="text-green-600 mb-3">
+      {{ product.trackingNumber }}
+      <i class="pi pi-copy ml-2 cursor-pointer text-green-600"></i>
+    </p>
+    <!-- Tracking + Name -->
+    <div class="grid mb-3">
+      <div class="col-6">
+        <label class="text-sm text-gray-500 block mb-1">Tracking number</label>
+        <input
+          pInputText
+          type="text"
+          [value]="product.trackingNumber"
+          disabled
+        />
+      </div>
+      <div class="col-6">
+        <label class="text-sm text-gray-500 block mb-1"
+          >Your product name</label
+        >
+        <input pInputText type="text" [(ngModel)]="userInput" />
+      </div>
+    </div>
+    <!-- Goods Inspection Box -->
+    <div
+      class="p-3 border-round mb-4"
+      style="background: #e6f4ea; border: 1px solid #cde3d1"
+    >
+      <div class="flex justify-content-between align-items-center mb-2">
+        <h4 class="m-0 text-base font-semibold">Goods inspection</h4>
+        <span class="text-green-800 font-medium">$0.5/kg</span>
+      </div>
+      <div class="text-sm text-gray-700">
+        <div>We check quantity, size, color.</div>
+        <div>Includes storage of goods in the warehouse for up to 1 week.</div>
+      </div>
+    </div>
+
+    <!-- Product N1 -->
+    <div class="mb-4">
+      <h3 class="mb-2">
+        <i class="pi pi-shopping-bag text-green-600 mr-2"></i> Product N1
+      </h3>
+      <!-- Category, Qty, Price, Weight -->
+      <div class="formgrid grid">
+        <div class="field col-3">
+          <label>Product category</label>
+          <p-dropdown
+            [options]="productTypes"
+            [(ngModel)]="selectedType"
+            optionLabel="label"
+            optionValue="value"
+            placeholder="Select a category"
+          ></p-dropdown>
+        </div>
+        <div class="field col-3">
+          <label>Quantity</label>
+          <div class="p-inputtext p-disabled text-center">3</div>
+        </div>
+        <div class="field col-3">
+          <label>Price per unit</label>
+          <div class="p-inputtext text-center">25</div>
+        </div>
+        <div class="field col-3">
+          <label>Weight kg</label>
+          <div class="p-inputtext p-disabled text-center">1.5</div>
+        </div>
+      </div>
+      <!-- Product Link -->
+      <div class="formgrid grid mt-3">
+        <div class="field col-12">
+          <label>Product link</label>
+          <div
+            class="p-inputtext flex justify-content-between align-items-center"
+          >
+            <span>https://cab.meet.cn/dashboard/packages</span>
+            <i class="pi pi-external-link text-gray-600"></i>
+          </div>
+        </div>
+      </div>
+      <!-- Size, Color, Model -->
+      <div class="formgrid grid mt-3">
+        <div class="field col-3">
+          <label>Size</label>
+          <div class="p-inputtext text-center">40</div>
+        </div>
+        <div class="field col-4">
+          <label>Color</label>
+          <p-dropdown
+            [options]="colors"
+            [(ngModel)]="selectedColor"
+            optionLabel="label"
+            optionValue="value"
+            placeholder="Select a color"
+          ></p-dropdown>
+        </div>
+        <div class="field col-4">
+          <label>Model</label>
+          <div class="p-inputtext text-center">X100</div>
+        </div>
+      </div>
+      <div class="flex justify-content-end mt-3">
+        <h4>Total: $75</h4>
+      </div>
+    </div>
+
+    <!-- Product Type -->
+    <div class="mt-4">
+      <h3 class="mb-2">Product type</h3>
+      <div class="formgrid grid">
+        <div class="col">
+          <button
+            pButton
+            label="Simple products"
+            class="p-button-outlined p-button-success w-full"
+          ></button>
+        </div>
+        <div class="col">
+          <button
+            pButton
+            label="Goods with liquids, batteries, powders"
+            class="p-button-outlined p-button-secondary w-full"
+            disabled
+          ></button>
+        </div>
+        <div class="col">
+          <button
+            pButton
+            label="Batteries and powerbanks"
+            class="p-button-outlined p-button-secondary w-full"
+            disabled
+          ></button>
+        </div>
+      </div>
+    </div>
+    <!-- Brand Availability -->
+    <div class="mt-4">
+      <h3 class="mb-2">Brand availability</h3>
+      <div class="formgrid grid">
+        <div class="field col-5">
+          <div class="p-inputtext p-disabled">
+            The package does not contain branded merchandise or replicas
+          </div>
+        </div>
+        <div class="field col-5">
+          <div class="p-inputtext p-disabled">
+            The package contains branded merchandise or replicas
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Services -->
+    <div class="mt-4">
+      <h3 class="mb-2">Services</h3>
+      <div class="formgrid grid">
+        <div class="field col-4">
+          <label>Packaging</label>
+          <div class="p-inputtext p-disabled">
+            Bubble wrap and box packaging
+          </div>
+        </div>
+        <div class="field col-4">
+          <label>Inspection</label>
+          <div class="p-inputtext p-disabled">
+            Size, quantity, and color check
+          </div>
+        </div>
+        <div class="field col-4">
+          <label>Warehouse Storage</label>
+          <div class="p-inputtext p-disabled">Up to 1 week included</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Right Section -->
+  <div class="col-12 md:col-4">
+    <!-- Product Status -->
+    <div class="mb-4"style="box-shadow: 0 0 6px 2px rgb(34,197,94,0.5);">
+      <p-card [ngClass]="['status-card', 'custom-card']">
+        <div class="flex justify-content-between align-items-center mb-3">
+          <h4 class="m-0 font-semibold">Product status</h4>
+          <small class="text-gray-500">Created {{ product.createdDate }}</small>
+        </div>
+        <div class="status-list">
+          <div
+            *ngFor="let s of product.statuses"
+            class="status-item p-3 mb-2 border-round flex justify-content-between align-items-start"
+            [ngClass]="{ 'highlight-status': s.status === 'Pending payment' }"
+          >
+            <div class="flex gap-2 align-items-start">
+              <i
+                class="pi pt-1"
+                [ngClass]="{
+                  'pi-check-circle text-green-600':
+                    s.status !== 'Pending payment',
+
+                  'pi-exclamation-circle text-yellow-500':
+                    s.status === 'Pending payment'
+                }"
+              ></i>
+              <div>
+                <span class="font-medium text-sm">{{ s.status }}</span>
+                <div
+                  *ngIf="s.status === 'Pending payment'"
+                  class="text-green-600 text-xs cursor-pointer"
+                >
+                  Pay
+                </div>
+                <div
+                  *ngIf="s.status === 'Checked in stock'"
+                  class="text-blue-500 text-xs cursor-pointer"
+                >
+                  View the report
+                </div>
+              </div>
+            </div>
+            <div class="text-sm text-gray-500 pt-1">{{ s.date }}</div>
+          </div>
+        </div>
+      </p-card>
+    </div>
+    <!-- Product Management -->
+    <p-card class="management-card custom-card">
+      <h4 class="mb-3">Product management</h4>
+      <div
+        *ngFor="let item of managementOptions"
+        class="p-2 mb-2 flex align-items-center gap-2 border-round"
+        [ngClass]="{
+          'text-gray-500': item.disabled,
+
+          'cursor-pointer': !item.disabled
+        }"
+      >
+        <i class="pi text-green-500" [ngClass]="item.Icon"></i>
+        <span>{{ item.label }}</span>
+      </div>
+    </p-card>
+  </div>
+</div>

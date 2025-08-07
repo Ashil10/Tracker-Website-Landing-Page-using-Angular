@@ -1,0 +1,13 @@
+
+:host ::ng-deep .p-menuitem-link {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  font-size: 1.15rem; /* Optional: increase text size too */
+}
+
+:host ::ng-deep .p-menuitem-link:hover,
+:host ::ng-deep .p-menuitem-link.p-highlight {
+  background-color: #cde3d1 !important;
+  color: #2e7d32 !important;
+  font-weight: 600;
+}

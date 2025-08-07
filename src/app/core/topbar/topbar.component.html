@@ -1,0 +1,27 @@
+<p-toolbar>
+  <div class="p-toolbar-group-left">
+      <button pButton icon="pi pi-plus-circle" label="Create" style="background-color: orange;"></button>
+      &nbsp;
+      <input
+        type="text"
+        pInputText 
+        placeholder="Search and tracking (by track number or name)"
+        style="width: 600px; height: 30px;"
+      />
+    </div>
+  
+
+  <div class="p-toolbar-group-right">
+    <i class="pi pi-send"></i>
+    &nbsp;
+    <i class="pi pi-user"></i>
+    &nbsp;
+    <p-dropdown
+      [options]="items"
+      [(ngModel)]="selectedUser"
+      optionLabel="label"
+      optionValue="value"
+      placeholder="Select a user"
+    ></p-dropdown>
+  </div>
+</p-toolbar>
